@@ -1,0 +1,3 @@
+# XMLHttpRequest Script Injection Example
+
+使用XHR对象下载JavaScript代码并注入页面

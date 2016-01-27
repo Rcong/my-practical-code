@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Script Injection Example</title>
+</head>
+	<script type="text/javascript">
+		var xhr = new XMLHttpRequest();
+		xhr.open("get","file.js",true);
+		xhr.onreadystatechange = function(){
+			console.log(xhr.readyState);
+		    if(xhr.readyState===4){
+		    	console.log(xhr.status);
+		        if(xhr.status>=200&&xhr.status<300||xhr.status==304){
+		            var script = document.createElement("script");
+		            script.type = "text/javascript";
+		            script.text = xhr.responseText;
+		            document.body.appendChild(script);
+		        }
+		    }
+		}
+	</script>
+<body>
+	<div class="demo">XMLHttpRequest Script Injection Example</div>
+</body>
+</html>
