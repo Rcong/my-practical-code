@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dynamic script element example</title>
+</head>
+	<script type="text/javascript" src="file.js">
+		var script = document.createElement("script");
+		script.type = "text/javascript";
+		script.src = "file.js";
+		document.getElementByTagName("head")[0].appendChild(script);
+	</script>
+<body>
+	<div class="demo">dynamic script element example</div>
+</body>
+</html>
