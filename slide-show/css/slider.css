@@ -1,0 +1,153 @@
+.slider,
+.slider .main,
+.slider .main .main-i{
+	position: relative;
+	width: 100%;
+	height: 400px;
+}
+/*幻灯片区域*/
+.slider .main{
+	overflow: hidden;
+}
+
+.slider .main .main-i{
+
+}
+
+.slider .main .main-i .caption{
+	position: absolute;
+	right: 50%;
+	top:30%;
+	z-index: 2;
+}
+
+.slider .main .main-i .caption h2{
+	font-size:40px;
+	line-height: 50px;
+	color: #B5B5B5;
+	text-align: right;
+}
+
+.slider .main .main-i .caption h3{
+	font-size:70px;
+	line-height: 70px;
+	color: black;
+	text-align: right;
+	font-family: 'Open Sans Condensed';
+}
+
+.slider .main .main-i img{
+	position: absolute;
+	left: 0px;
+	/*top: 0px;*/
+	top: 50%;
+	transform:translateY(-50%);
+	-webkit-transform:translateY(-50%);
+	width: 100%;
+	z-index: 1;
+}
+
+/*控制按钮区域*/
+.slider .ctrl{
+	width: 100%;
+	height: 13px;
+	line-height: 13px;
+	text-align: center;/*为了使控制按钮水平居中*/
+	position: absolute;
+	bottom: -13px;
+}
+
+.slider .ctrl .ctrl-i{
+	position: relative;
+	display: inline-block;
+	width: 150px;
+	height: 13px;
+	background: #666;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+	margin-left: 1px;
+}
+
+.slider .ctrl .ctrl-i img{
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	bottom: 50px;
+	z-index: 1;
+	opacity: 0;
+	-webkit-transition:all 0.2s;
+}
+
+/*hover 到控制按钮*/
+.slider .ctrl .ctrl-i:hover{
+	background: #F0F0F0;
+}
+
+.slider .ctrl .ctrl-i:hover img{
+	bottom: 13px;
+	-webkit-box-reflect:below 0px -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		from(transparent),
+		color-stop(50%,transparent),
+		to(rgba(255,255,255,0.3))
+	);
+	opacity: 1;
+}
+
+/*active 当前展现状态*/
+.slider .ctrl .ctrl-i-active,
+.slider .ctrl .ctrl-i-active:hover{
+	background: black;
+}
+
+.slider .ctrl .ctrl-i-active:hover img{
+	opacity: 0;
+}
+
+/*幻灯片切换的样式*/
+.slider .main .main-i{
+	opacity: 0;
+	position: absolute;
+	right: 50%;
+	-webkit-transition:all 0.5s;
+	z-index: 2;
+}
+
+.slider .main .main-i-right{
+	right: -50%;
+}
+
+.slider .main .main-i h2{
+	margin-right: 45px;
+}
+
+.slider .main .main-i h3{
+	margin-right: -45px;
+}
+
+.slider .main .main-i h2,
+.slider .main .main-i h3{
+	opacity: 0;
+	-webkit-transition:all 1s 0.8s;
+}
+
+#main-background,
+.slider .main .main-i-active{
+	opacity: 1;
+	right: 0;
+}
+
+#main-background{
+	z-index: 1;
+}
+
+.slider .main .main-i-active h2,
+.slider .main .main-i-active h3{
+	opacity: 1;
+	margin-right: 0px;
+}
+
+.slider .main .main-i-active .caption{
+	margin-right: 13%;
+}

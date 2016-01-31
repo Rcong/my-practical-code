@@ -1,0 +1,13 @@
+*{
+	padding: 0px;
+	margin:0px;
+}
+
+body{
+	padding: 50px 0px;
+	background: pink;
+	font-size: 14px;
+	font-family: 'Avenir Next';
+	color:#555;
+	-webkit-font-smoothing:antialiased;/*字体抗锯齿*/
+}
