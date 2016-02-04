@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我的生活</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="http://m.sui.taobao.org/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.1/css/sm.css">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.1/css/sm-extend.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    
+    <!-- page 容器 -->
+    <div class="page">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="icon iconfont icon-caidan pull-left open-panel"></a>
+            <h1 class="title my-theme-green">开源中国</h1>
+            <a class="icon iconfont icon-chazhao pull-right open-panel"></a>
+        </header>
+        <nav class="bar bar-tab">
+            <a class="tab-item my-active" href="#">
+                <span class="iconfont icon-copy icon"></span>
+                <span class="tab-label">综合</span>
+            </a>
+            <a class="tab-item" href="#">
+                <span class="iconfont icon-comment icon"></span>
+                <span class="tab-label">动弹</span>
+            </a>
+            <a class="tab-item" href="#">
+                <span class="iconfont icon-roundadd icon"></span>
+            </a>
+            <a class="tab-item" href="#">
+                <span class="iconfont icon-discover icon"></span>
+                <span class="tab-label">发现</span>
+            </a>
+            <a class="tab-item" href="#">
+                <span class="iconfont icon-xinjian2 icon"></span>
+                <span class="tab-label">我</span>
+            </a>
+        </nav>
+        <div class="content">
+        <!-- 这里是页面内容区 -->
+            <div class="buttons-tab">
+                <a href="#tab1" class="tab-link my-active button">咨询</a>
+                <a href="#tab2" class="tab-link button">热点</a>
+                <a href="#tab3" class="tab-link button">博客</a>
+                <a href="#tab3" class="tab-link button">推荐</a>
+            </div>
+            <div class="list-block media-list">
+                <ul>
+                    <li>
+                        <a href="#" class="item-link item-content">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">标题</div>
+                                    <!-- <div class="item-after">$15</div> -->
+                                </div>
+                                <!-- <div class="item-subtitle">标题</div> -->
+                                <div class="item-text">此处是文本内容...</div>
+                          </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="item-link item-content">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">标题</div>
+                                    <!-- <div class="item-after">$15</div> -->
+                                </div>
+                                <!-- <div class="item-subtitle">标题</div> -->
+                                <div class="item-text">此处是文本内容...</div>
+                          </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="item-link item-content">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">标题</div>
+                                    <!-- <div class="item-after">$15</div> -->
+                                </div>
+                                <!-- <div class="item-subtitle">标题</div> -->
+                                <div class="item-text">此处是文本内容...</div>
+                          </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- popup, panel 等放在这里 -->
+    <div class="panel-overlay"></div>
+    <div class="panel theme-white panel-left panel-reveal">
+        <div class="content-block">
+            <p>这是一个侧栏</p>
+            <!-- Click on link with "close-panel" class will close panel -->
+            <p><a href="#" class="close-panel">关闭</a></p>
+        </div>
+    </div>
+    
+
+
+    <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/sm.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/sm-extend.js' charset='utf-8'></script>
+    <script type="text/javascript">
+        $.init();         
+        $('.panel-left').on('opened', function () {
+            // myApp.alert('Left panel opened!');
+            console.log($('.panel-left'));
+        });
+        // $$('.panel-left').on('close', function () {
+        //     myApp.alert('Left panel is closing!');
+        // });
+        // $$('.panel-right').on('open', function () {
+        //     myApp.alert('Right panel is opening!');
+        // });
+        // $$('.panel-right').on('closed', function () {
+        //     myApp.alert('Right panel closed!');
+        // });
+    </script>
+    </script>
+  </body>
+</html>

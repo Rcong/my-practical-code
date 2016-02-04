@@ -1,0 +1,15 @@
+.my-active{
+	color: #15A230!important;
+    border-color: #15A230!important;;
+    z-index: 100;
+}
+
+.my-theme-green{
+	background: #15A230;
+    color: #fff;
+}
+
+.my-theme-grey{
+	background: #f5f5f5;
+	color: #707070;
+}
