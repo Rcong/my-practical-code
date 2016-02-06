@@ -1,5 +1,5 @@
 /*右上角music按钮部分*/
-#music{
+.music{
 	position: fixed;
 	top: 3vh;
 	right: 4vw;
@@ -11,7 +11,7 @@
 	background: #fff;
 }
 
-#music>img:first-of-type{
+.music>img:first-of-type{
 	position: absolute;
 	top: 24%;
 	right: 2.5%;
@@ -19,7 +19,7 @@
 	z-index: 1;
 }
 
-#music>img:last-of-type{
+.music>img:last-of-type{
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -30,9 +30,19 @@
 	z-index: 0;
 }
 
-#music>img.play{
+.music>img.play{
 	-webkit-animation:music-disc 4s linear infinite; /* Safari 和 Chrome */
 	animation:music-disc 4s linear infinite;
+}
+
+.paused{
+	-webkit-animation-play-state:paused; /* Safari 和 Chrome */
+	animation-play-state:paused;
+}
+
+.run{
+	-webkit-animation-play-state:running; /* Safari 和 Chrome */
+	animation-play-state:running;
 }
 
 @-webkit-keyframes music-disc{
