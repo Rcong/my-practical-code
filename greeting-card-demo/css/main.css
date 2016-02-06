@@ -16,6 +16,7 @@
 	top: 24%;
 	right: 2.5%;
 	width: 28.421%;
+	z-index: 1;
 }
 
 #music>img:last-of-type{
@@ -26,6 +27,34 @@
 	left: 0;
 	margin: auto;
 	width: 79%;
+	z-index: 0;
+}
+
+#music>img.play{
+	-webkit-animation:music-disc 4s linear infinite; /* Safari 和 Chrome */
+	animation:music-disc 4s linear infinite;
+}
+
+@-webkit-keyframes music-disc{
+	0%{
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(360deg);
+		transform:rotate(360deg);
+	}
+}
+
+@keyframes music-disc{
+	0%{
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(360deg);
+		transform:rotate(360deg);
+	}
 }
 
 /*page与bg*/
@@ -91,6 +120,30 @@
 	-ms-box-shadow: 0 0 10vw 10vw #d60b3b;
 	-o-box-shadow: 0 0 10vw 10vw #d60b3b;
 	box-shadow: 0 0 10vw 10vw #d60b3b;
+	-webkit-animation:p1-lantern .5s infinite alternate; /* Safari 和 Chrome */
+	animation:p1-lantern .5s infinite alternate;
+}
+
+@-webkit-keyframes p1-lantern{
+	0%{
+		opacity: .5;
+		-webkit-transform:scale(.8,.8);
+		transform:scale(.8,.8);
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+@keyframes p1-lantern{
+	0%{
+		opacity: .5;
+		-webkit-transform:scale(.8,.8);
+		transform:scale(.8,.8);
+	}
+	100%{
+		opacity: 1;
+	}
 }
 
 #page1 > .p1-imooc{
@@ -136,6 +189,30 @@
 	border-radius: 50%;
 	width: 59.375vw;
 	height: 59.375vw;
+	-webkit-animation:p2-circle-outer 1s linear 3s infinite; /* Safari 和 Chrome */
+	animation:p2-circle-outer 1s linear 3s infinite;
+}
+
+@-webkit-keyframes p2-circle-outer{
+	0%{
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(-360deg);
+		transform:rotate(-360deg);
+	}
+}
+
+@keyframes p2-circle-outer{
+	0%{
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(-360deg);
+		transform:rotate(-360deg);
+	}
 }
 
 #page2 > .p2-circle:before{
@@ -151,6 +228,30 @@
 	border-radius: 50%;
 	width: 45.625vw;
 	height: 45.625vw;
+	-webkit-animation:p2-circle-middle 1s linear 2s infinite; /* Safari 和 Chrome */
+	animation:p2-circle-middle 1s linear 2s infinite;
+}
+
+@-webkit-keyframes p2-circle-middle{
+	0%{
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(720deg);
+		transform:rotate(720deg);
+	}
+}
+
+@keyframes p2-circle-middle{
+	0%{
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(720deg);
+		transform:rotate(720deg);
+	}
 }
 
 #page2 > .p2-circle:after{
@@ -166,6 +267,30 @@
 	border-radius: 50%;
 	width: 39.9375vw;
 	height: 39.9375vw;
+	-webkit-animation:p2-circle-inner 1s linear 1s infinite; /* Safari 和 Chrome */
+	animation:p2-circle-inner 1s linear 1s infinite;
+}
+
+@-webkit-keyframes p2-circle-inner{
+	0%{
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(-1080deg);
+		transform:rotate(-1080deg);
+	}
+}
+
+@keyframes p2-circle-inner{
+	0%{
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(-1080deg);
+		transform:rotate(-1080deg);
+	}
 }
 
 #page2 > .p2-2016{
@@ -183,7 +308,7 @@
 
 /*page3*/
 #page3{
-	display: block;
+	display: block ;
 }
 
 #page3 > .bg{
@@ -246,4 +371,28 @@
 	border-radius: 50%;
 	background: url(../images/p3_blessing.png) no-repeat center center;
 	background-size: 100%;
+	-webkit-animation:p3-blessing 2s linear infinite; /* Safari 和 Chrome */
+	animation:p3-blessing 2s linear infinite;
+}
+
+@-webkit-keyframes p3-blessing{
+	0%{
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(360deg);
+		transform:rotate(360deg);
+	}
+}
+
+@keyframes p3-blessing{
+	0%{
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(360deg);
+		transform:rotate(360deg);
+	}
 }
