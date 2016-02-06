@@ -26,18 +26,6 @@ window.onload = function(){
 		removeClass(this,'play');
 	});
 
-	// music.onclick = function(){
-	// 	if(audio.paused){
-	// 		audio.play();
-	// 		this.style.animationPlayState = "running";
-	// 		// addClass(this,'play');
-	// 	}else{
-	// 		audio.pause();
-	// 		this.style.animationPlayState = "paused";
-	// 		// removeClass(this,'play');
-	// 	}	
-	// }
-	
 	music.addEventListener("touchstart",function(){
 		if(audio.paused){
 			audio.play();
