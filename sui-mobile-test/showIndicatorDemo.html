@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>showIndicatorDemo</title>
+	<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.css">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.css">
+</head>
+<body>
+	<div class="page-group"> 
+		<div class="page page-current" id='page_list'> 
+			<div class="content"> 
+				<div class="content-padded"> 
+					<ul> 
+						<li> <a href="test1.jsp">路由 Demo 页面 B</a> </li> 
+					</ul> 
+				</div> 
+			</div> 
+		</div> 
+	</div>
+	<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.js' charset='utf-8'></script>
+	<script type="text/javascript">
+	$(function () { 
+		'use strict'; 
+		$(document).on("pageInit", "#page_list", function(e, id, page) { 
+			setTimeout(function(){
+				$.showIndicator();
+			},0); 
+		}); 
+		$.init(); 
+	});
+	</script>
+</body>
+</html>
