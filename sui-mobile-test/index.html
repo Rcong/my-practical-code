@@ -28,7 +28,7 @@
                 <span class="iconfont icon-copy icon"></span>
                 <span class="tab-label">综合</span>
             </a>
-            <a class="tab-item" href="#">
+            <a class="tab-item external" href="/showIndicatorDemo">
                 <span class="iconfont icon-comment icon"></span>
                 <span class="tab-label">动弹</span>
             </a>
@@ -109,12 +109,11 @@
     <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.js' charset='utf-8'></script>
     <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/sm.js' charset='utf-8'></script>
     <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/sm-extend.js' charset='utf-8'></script>
-    <script type="text/javascript">
-        $.init();         
-        $('.panel-left').on('opened', function () {
-            // myApp.alert('Left panel opened!');
-            console.log($('.panel-left'));
-        });
+    <script type="text/javascript">               
+        // $('.panel-left').on('opened', function () {
+        //     // myApp.alert('Left panel opened!');
+        //     console.log($('.panel-left'));
+        // });
         // $$('.panel-left').on('close', function () {
         //     myApp.alert('Left panel is closing!');
         // });
@@ -124,6 +123,11 @@
         // $$('.panel-right').on('closed', function () {
         //     myApp.alert('Right panel closed!');
         // });
+        $(document).on("pageInit", function(e, pageId, $page) {
+
+        });
+
+        $.init();  
     </script>
     </script>
   </body>
