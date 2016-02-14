@@ -1,8 +1,11 @@
-# sui-mobile中遇到的问题整理
+# sui-mobile笔记整理
 
 ---
-### 关于“工具栏”切换
-sui-mobile开发人员建议不使用Router,而是采用浏览器直接跳转的形式(即加给工具栏链接加external的class),也就是不做成SPA形式。
+### 相关Demo
+技术选型上在segmentfault找到一篇文章,UI框架也是使用SUI-Mobile,可用于参考。
+[链接:使用node+vue.js实现SPA应用,解决了SPA应用的最大缺点SEO](https://segmentfault.com/a/1190000004372736)。
+Github上找到相关demo,技术栈使用了vue、vue-router、vue-resource、webpack、sui-mobile、es6-babel。
+[链接:vue-sui-demo](https://github.com/eteplus/vue-sui-demo)
 
 ---
 ### 两个页面相互切换,切换到的新页面中的js不执行
