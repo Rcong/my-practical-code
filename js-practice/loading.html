@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>loading</title>
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+      }
+      .table{
+        margin:10px;
+      }
+      .table-cell{
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid pink;
+        border-radius: 5px;
+      }
+      .btn{
+        display: block;
+        margin: 10px auto;
+        width:80px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border: 1px solid pink;
+        border-radius: 5px;
+        color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div id='table' class="table">
+      <div class="table-cell">内容1</div>
+      <div class="table-cell">内容2</div>
+      <div class="table-cell">内容3</div>
+    </div>
+    <a id="loading" class="btn">加载更多</a>
+    <script src="http://mockjs.com/dist/mock.js"></script>
+    <script type="text/javascript">
+
+      Mock.mock(/\.json/, {
+        'list|1-5': [{
+          'content':'@word'
+        }]
+      });
+
+      var btn = document.getElementById('loading'),
+          table = document.getElementById('table')
+          flag = true;
+
+      btn.addEventListener('click',function(e){
+
+        e.preventDefault();
+
+        if (!flag) {
+          return;
+        }
+        flag = false;
+        ajax({
+          url:'mock.json',
+          type:'post',
+          data:{},
+          success:function(data){
+            flag = true;
+            addTableCells(table,data.list);
+          },
+          error:function(){
+
+          }
+        });
+      });
+
+      function addTableCells(el,datas){
+          var str = '';
+          for (var i = 0,max = datas.length; i < max; i++) {
+            str+='<div class="table-cell">'+datas[i].content+'</div>';
+          }
+          table.innerHTML+=str;
+      }
+
+      function ajax(options){
+
+        var type = options.type || 'get',
+            data = options.data || {},
+            success = options.success || function(){},
+            error = options.error || function(){};
+
+        var urlStr = '';
+        for(var key in data){
+          urlStr = urlStr+key+'='+data[key]+'&';
+        }
+        urlStr = urlStr.substr(0,urlStr.length-1);
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState===4&&xhr.status===200) {
+            console.log(xhr.responseText);
+            var json = JSON.parse(xhr.responseText);
+            success(json);
+          }else{
+            error();
+          }
+        };
+
+        if(type.toLowerCase()==='post'){
+          xhr.open(type,options.url,true);
+          xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+          xhr.send(urlStr);
+        }
+        if(type.toLowerCase()==='get'){
+          xhr.open(type,options.url+'?'+urlStr,true);
+          xhr.send();
+        }
+      }
+    </script>
+  </body>
+</html>
