@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>waterfall demo</title>
+    <style media="screen">
+
+        body {
+            margin: 0;
+        }
+
+        .waterfall {
+            position: relative;
+            width: 1244px;
+            background: pink;
+            min-height: 100px;
+            margin: 0 auto;
+        }
+
+        .item {
+            position: absolute;
+            width: 236px;
+            font-size: 12px;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,.3);
+            -moz-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+            -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+            transition: all .5s;
+        }
+
+        .item a {
+            display: block;
+        }
+
+        .item img {
+            display: block;
+            cursor: auto;
+        }
+
+        .item p {
+            display: block;
+            text-align: center;
+            padding: 0 16px;
+            margin: 10px 0;
+            line-height: 1.35em;
+            overflow: hidden;
+            word-wrap: break-word;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="waterfall-wrap" class="waterfall">
+    </div>
+
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="waterfall.js"></script>
+  </body>
+</html>
