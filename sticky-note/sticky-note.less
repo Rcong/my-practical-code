@@ -1,0 +1,128 @@
+@note-bg: #75C041;
+@delete-color: #fff;
+@wrap-bg: url("http://7xrunf.com1.z0.glb.clouddn.com/491792.jpg")  0 / cover fixed;
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: @wrap-bg;
+}
+#wrap {
+    position: absolute;;
+    overflow: hidden;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    border-radius: .3em;
+    background: hsla(0,0%,100%,.1);
+    overflow: hidden;
+    box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,
+               0 .5em 1em rgba(0, 0, 0, 0.6);
+    text-shadow: 0 1px 1px hsla(0,0%,100%,.3);
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        filter: blur(15px);
+        z-index: -1;
+        background: url("http://7xrunf.com1.z0.glb.clouddn.com/491792.jpg")  0 / cover fixed;
+        margin: -30px;
+    }
+}
+
+.folded-corner (@background, @size, @angle: 30deg){
+    position: relative;
+    background: @background;
+    /* Fallback */
+    background: linear-gradient(@angle - 90deg, transparent @size, @background 0);
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em;
+    @x: abs(@size / cos(@angle));
+    @y: abs(@size / sin(@angle));
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(to left top, transparent 50%, rgba(0,0,0,.2) 0, rgba(0,0,0,.4)) 100% 0 no-repeat;
+        width: @y;
+        height: @x;
+        transform: translateY(@x - @y) rotate(2 * @angle - 90deg);
+        transform-origin: top right;
+        border-top-left-radius: .5em;
+        box-shadow: -.2em -.2em .3em -.1em rgba(0,0,0,.2);
+    }
+}
+
+
+@corner-bg: #9ACD32;
+@corner-size: 1.25em;
+@corner-angle: 60deg;
+@font-color: #fff;
+.note {
+    position: absolute;
+    width: 200px;
+    border-radius: .5em;
+    .header {
+        &:hover {
+            .delete{
+                display: block;
+            }
+        }
+        width: 100%;
+        height: 20px;
+        cursor: move;
+        background:desaturate(@corner-bg, 10%);
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+        .delete{
+            &:hover {
+                cursor: default;
+            }
+            display: none;
+            position: absolute;
+            background: @font-color;
+            opacity: .6;
+            border-radius: 50%;
+            color: #000;
+            left: -8px;
+            top: -8px;
+        }
+    }
+    .content {
+        width: 100%;
+        min-height: 100px;
+        outline: none;
+        padding: 1.5em;
+        color: @font-color;
+        box-sizing: border-box;
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+        .folded-corner(@corner-bg, @corner-size, @corner-angle);
+    }
+}
+
+@add-btn-bg: rgba(102, 102, 102, 0.3);
+@add-btn-bg-highlight: rgba(102, 102, 102, 0.6);
+.sn-add-btn {
+    &:hover {
+        background: @add-btn-bg-highlight;
+    }
+    position: absolute;
+    z-index: 3;
+    left: 10px;
+    bottom: 10px;
+    background: @add-btn-bg;
+    width: 48px;
+    height: 48px;
+    padding: 6px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+    span {
+        color: #fff;
+        font-size: 36px;
+    }
+}
