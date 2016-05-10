@@ -20,8 +20,8 @@ Note.prototype = {
     content: 'Write Something!!!',
     $wrap: $('body'),
     $note: null,
-    locationX: 0,
-    locationY: 0,
+    locationX: 10,
+    locationY: 10,
     colors: {
         'Pink': '#FFC0CB',
         'MayaBlue': '#77C1F0',
@@ -45,6 +45,7 @@ Note.prototype = {
         this.$note = $note;
         //将渲染好的note的content保存起来
         this.save(this.content);
+        this.setLocation(this.locationX, this.locationY);
     },
     bind: function() {
         var self = this,
