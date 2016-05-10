@@ -1,0 +1,25 @@
+{
+  "name": "sticky-note",
+  "version": "0.1.0",
+  "description": "sticky-note demo",
+  "main": "sticky-note.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rcong/sticky-note.git"
+  },
+  "author": "rcong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rcong/sticky-note/issues"
+  },
+  "homepage": "https://github.com/Rcong/sticky-note#readme",
+  "devDependencies": {
+    "browser-sync": "^2.12.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-less": "^3.0.5"
+  }
+}

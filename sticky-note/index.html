@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <title>sticky-note</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.css">
+    <link rel="stylesheet" href="static/sticky-note.css">
+</head>
+
+<body>
+    <div id="wrap" class="wrap">
+    </div>
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="note.js"></script>
+    <script type="text/javascript">
+
+        var noteWrap = (function(){
+            var wrap = null;
+
+            function getRandomColor(){
+                var colors = ['Pink', 'MayaBlue', 'Apple'],
+                    index = Math.floor(Math.random() * (colors.length + 0.99));
+                return colors[index];
+            }
+
+            return {
+                init:function($wrap){
+                    wrap = $wrap;
+
+                    var addBtn = '<a class="sn-add-btn"><span class="fa fa-plus"></span></a>';
+                    wrap.append($(addBtn));
+                    this.bind();
+                },
+                bind: function(){
+                    $('.sn-add-btn').on('click', function(){
+                        var note = new Note({
+                            wrap: wrap,
+                            color: getRandomColor()
+                        });
+                    });
+                },
+                load: function(){
+                    $.each(localStorage, function(key, value) {
+                        if(key.indexOf('Note_') === 0){
+                            new Note({
+                                id: key,
+                                context: value,
+                                wrap: wrap,
+                                color: getRandomColor()
+                            });
+                        }
+                    });
+                }
+            }
+        })()
+
+        noteWrap.init($('#wrap'));
+        noteWrap.load();
+    </script>
+</body>
+
+</html>
