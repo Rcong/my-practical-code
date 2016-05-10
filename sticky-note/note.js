@@ -20,8 +20,8 @@ Note.prototype = {
     content: 'Write Something!!!',
     $wrap: $('body'),
     $note: null,
-    locationX: 0,
-    locationY: 0,
+    locationX: 10,
+    locationY: 10,
     colors: {
         'Pink': '#FFC0CB',
         'MayaBlue': '#77C1F0',
